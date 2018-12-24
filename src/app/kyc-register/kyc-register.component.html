@@ -1,0 +1,127 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>DART Bank</title>
+	<link rel="icon" href="http://res.cloudinary.com/dusdzfsxa/dart.png">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://unpkg.com/ngx-bootstrap/datepicker/bs-datepicker.css">
+</head>
+
+<body class="unselectable">
+	<header id="header" class="fixed">
+		<div class="header-content ">
+			<a class="logo removeunder" [routerLink]="['/home']">
+				<img src="http://res.cloudinary.com/dusdzfsxa/dart_logo_alone.svg" height="60px" alt=""> &nbsp;&nbsp;&nbsp;&nbsp;
+				<h3 class="headname">DART Bank</h3>
+			</a>
+			<nav class="navigation" role="navigation">
+				<ul class="primary-nav">
+					<li>
+						<a [routerLink]="['/approval']">KYC Approval</a>
+					</li>
+					<li>
+						<a [routerLink]="['/kycsearch']">KYC Admin Tool</a>
+					</li>
+					<li>
+						<a [routerLink]="['']">Log Out</a>
+					</li>
+				</ul>
+			</nav>
+			<a href="#" class="nav-toggle">Menu
+				<span></span>
+			</a>
+		</div>
+	</header>
+	<br>
+	<div class="container">
+		<div class="row main">
+			<div class="panel-heading">
+				<div class="panel-title text-center">
+						<h1>Know Your Customer - Register</h1>
+					<hr />
+				</div>
+			</div>
+			<div class="main-login main-center">
+				<form class="form-horizontal conForm" [formGroup]="loginDetail" (ngSubmit)="logUser()">
+					<div class="form-group">
+						<label for="name" class="cols-sm-2 control-label">Name</label>
+						<div class="cols-sm-10">
+							<div class="input-group">
+								<span class="input-group-addon">
+									<i class="fa fa-user fa" aria-hidden="true"></i>
+								</span>
+								<input type="text" class="form-control" formControlName="uname" name="name" id="name" (click)="completed(i)" placeholder="Customer Name"
+								/>
+							</div>
+
+							<div class="alert" *ngIf="!loginDetail.controls['uname'].valid && loginDetail.controls['uname'].touched">Customer Name is required</div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="email" class="cols-sm-2 control-label">Email</label>
+						<div class="cols-sm-10">
+							<div class="input-group">
+								<span class="input-group-addon">
+									<i class="fa fa-envelope fa" aria-hidden="true"></i>
+								</span>
+								<input type="text" class="form-control" formControlName="emai" name="email" id="email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+								 placeholder="xyc@gmail.com" />
+							</div>
+							<div class="alert" *ngIf="!loginDetail.controls['emai'].valid && loginDetail.controls['emai'].touched">Email is required</div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="username" class="cols-sm-2 control-label">Date of Birth</label>
+						<div class="cols-sm-10">
+							<div class="input-group">
+								<span class="input-group-addon">
+									<i class="fa fa-calendar" aria-hidden="true"></i>
+								</span>
+								<input type="text" placeholder="DOB" formControlName="dob" readonly class="form-control" bsDatepicker [bsConfig]="{ dateInputFormat: 'DD/MM/YYYY' }">
+							</div>
+							<!-- <div class="alert" *ngIf="!loginDetail.controls['dob'].valid && loginDetail.controls['dob'].touched">DateofBirth field is required</div>  -->
+							<!-- <div class="alert" *ngIf="!loginDetail.controls['dob'].valid " >DateofBirth field is required</div>  -->
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="username" class="cols-sm-2 control-label">Aadhaar No</label>
+						<div class="cols-sm-10">
+							<div class="input-group">
+								<span class="input-group-addon">
+									<i class="fa fa-id-card-o" aria-hidden="true"></i>
+								</span>
+								<input type="text" placeholder="Aadhaar Number" step=5 maxlength="12" formControlName="aatha" class="form-control">
+							</div>
+							<div class="alert" *ngIf="!loginDetail.controls['aatha'].valid && loginDetail.controls['aatha'].touched">Aadhaar number is required</div>
+						</div>
+					</div>
+
+
+					<div class="form-group ">
+						<button type="submit" [disabled]="!loginDetail.valid" class="btn btn-primary btn-lg btn-block login-button">Register</button>
+					</div>
+					<br>
+				</form>
+			</div>
+		</div>
+	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+
+</body>
+
+</html>

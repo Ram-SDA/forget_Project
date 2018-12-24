@@ -1,0 +1,27 @@
+td{
+    text-align:center;
+}
+
+th{
+    text-align:center;
+}
+ngx-gallery/deep/.ngx-gallery-arrow {
+    display: none;
+  }
+
+  h3{ 
+    font-weight: bold; font-size: 20px;
+  }
+
+  .button {
+    background-color: rgb(38, 115, 216); /* Green */
+    border: none;
+    color: white;
+    padding: 6px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    cursor: pointer;
+}

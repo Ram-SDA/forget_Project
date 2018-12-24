@@ -1,0 +1,31 @@
+<nav *ngIf="nav.visible">
+<header id="header" class="fixed">
+    <div class="header-content ">
+      <a class="logo" [routerLink]="['/home']">
+        <a class="logo" href="#">
+          <img src="http://res.cloudinary.com/dusdzfsxa/dart_logo_alone.svg" height="60px" alt="">
+        </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <h3 class="headname">DART Bank</h3>
+      </a>
+      <nav class="navigation" role="navigation">
+        <ul class="primary-nav">
+          <li>
+            <a [routerLink]="['/kycregister']">Add New Users</a>
+          </li>
+          <li>
+            <a [routerLink]="['/approval']">KYC Approval</a>
+          </li>
+          <li>
+            <a [routerLink]="['/kycsearch']">KYC Admin Tool</a>
+          </li>
+          <li>
+            <a [routerLink]="['']">Log Out</a>
+          </li>
+        </ul>
+      </nav>
+      <a href="#" class="nav-toggle">Menu
+        <span></span>
+      </a>
+    </div>
+  </header>
+</nav>

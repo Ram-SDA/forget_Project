@@ -1,0 +1,99 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Siva Bank</title>
+  <link rel="icon" href="http://res.cloudinary.com/dusdzfsxa/dart.png">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <!-- header section -->
+  <section class="banner img" role="banner">
+    <nav class="navigation" role="navigation">
+      <ul class="primary-nav">
+      </ul>
+    </nav>
+    <div id="banner" class="container">
+    </div>
+    <div class="col-md-3 col-md-offset-4 conForm centerFlex ">
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-8">
+          <a class="logo" href="#">
+            <img src="http://res.cloudinary.com/dusdzfsxa//DART_Bank.svg" class="padi_15 grayclr" alt=""> &nbsp;&nbsp;&nbsp;
+          </a>
+        </div>
+      </div>
+      <div *ngIf="logn">
+        <div *ngIf="!name; else userinfo">
+          <form [formGroup]="loginDetail" (ngSubmit)="logUser()" name="fo">
+            <br>
+            <div class="col-md-12 text-center">
+              <div class="alert text-center" *ngIf="errmsg">{{msg}}</div>
+            </div>
+            <div>
+              <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-11">
+                  <input name="lo" id="name" type="text" autocomplete="off" formControlName="emai" class="col-md-11" placeholder="Username">
+                  <div class="alert" *ngIf="!loginDetail.controls['emai'].valid && loginDetail.controls['emai'].touched">Username field is required</div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="ROW">
+                  <div class="col-md-1"></div>
+                  <div class="col-md-11">
+                    <input name="lo" type="password" formControlName="pass" class="col-md-11 noMarr" placeholder="Password">
+                    <div class="alert" *ngIf="!loginDetail.controls['pass'].valid && loginDetail.controls['pass'].touched">Password field is required</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 text-center">
+              <br>
+              <button type="submit" [disabled]="!loginDetail.valid" class="submitBnt btn button" value="Login">Sign in</button>
+              <br>
+              <br>
+              <a href="#" class="grayclr" (click)="forgetpassword()">Forgot Password?</a>
+              <br>
+              <br>
+            </div>
+            <br>
+          </form>
+        </div>
+      </div>
+      <div *ngIf="forgt">
+        <form [formGroup]="forgetlogin" (ngSubmit)="forgetUser()" name="fo">
+          <br>
+          <h2 class="text-center frgt" >
+            <strong> Forgot Password</strong>
+          </h2>
+          <br>
+          <br>
+          <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-11">
+              <input name="lo" id="name" type="text" autocomplete="off" formControlName="forgemai" class="col-md-11" placeholder="Email">
+              <div class="alert" *ngIf="!forgetlogin.controls['forgemai'].valid && forgetlogin.controls['forgemai'].touched">Email field is required</div>
+            </div>
+          </div>
+          <div class="col-md-12 text-center">
+            <br>
+            <button type="submit" [disabled]="!forgetlogin.valid" class="submitBnt btn button" value="Login">Submit</button>&nbsp;
+            <button type="submit" class="submitBnt btn button" (click)="forgetback()" value="Login">Back</button>
+            <br>
+            <br>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+  <script src="https://unpkg.com/notie"></script>
+</body>
+
+</html>

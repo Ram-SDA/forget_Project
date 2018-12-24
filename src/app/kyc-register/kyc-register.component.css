@@ -1,0 +1,64 @@
+.bs-example{
+    margin: 20px;
+}
+
+body, html{
+     height: 100%;
+ 	background-repeat: no-repeat;
+ 	background-color: #d3d3d309;
+ 	/* font-family: 'Oxygen', sans-serif; */
+}
+
+.main{
+ 	margin-top: 70px;
+}
+
+
+.main-login{
+ 	background-color: #d3d3d313;
+    /* shadows and rounded borders */
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+
+}
+
+.main-center{
+ 	margin-top: 30px;
+ 	margin: 0 auto;
+ 	/* max-width: 330px; */
+    padding: 40px 40px;
+
+}
+
+.login-button{
+    margin-top: 5px;
+    background-color: rgb(38, 115, 216); 
+}
+
+.login-register{
+	font-size: 11px;
+	text-align: center;
+}
+
+
+  
+h3{
+    font-weight: bold; font-size: 20px;
+  }
+
+  .control-label
+  {
+      font-size: 16px;
+  }
+
+:host /deep/ .theme-green .bs-datepicker-head {
+    background-color: rgb(38, 115, 216); 
+}
+.removeunder
+{
+  text-decoration: none;
+}
